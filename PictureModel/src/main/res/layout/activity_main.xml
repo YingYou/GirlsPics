@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <!--<include layout="@layout/toolbar" />-->
+
+    <include
+        android:id="@+id/common_toolbar"
+        layout="@layout/common_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+
+    <!--<com.github.obsessive.library.widgets.XViewPager-->
+        <!--android:id="@+id/home_container"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"/>-->
+
+    <RadioGroup
+        android:id="@+id/tab_menu"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <RadioButton
+            android:id="@+id/rbHome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:button="@null"
+            android:checked="true"
+            android:gravity="center_horizontal|bottom"
+            android:paddingTop="2dp"
+            android:background="@drawable/tab_selector_home"/>
+
+        <RadioButton
+            android:id="@+id/rbSubject"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center_horizontal|bottom"
+            android:paddingTop="2dp"
+            android:background="@drawable/tab_selector_subject"/>
+
+        <RadioButton
+            android:id="@+id/rbRamble"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center_horizontal|bottom"
+            android:paddingTop="2dp"
+            android:background="@drawable/tab_selector_ramble"/>
+
+        <RadioButton
+            android:id="@+id/rbMy"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center_horizontal|bottom"
+            android:paddingTop="2dp"
+            android:background="@drawable/tab_selector_mine"/>
+    </RadioGroup>
+
+
+</LinearLayout>

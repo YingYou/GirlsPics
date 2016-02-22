@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/GirlsPics.iml" filepath="$PROJECT_DIR$/GirlsPics.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PictureModel/PictureModel.iml" filepath="$PROJECT_DIR$/PictureModel/PictureModel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library_youku/library_youku.iml" filepath="$PROJECT_DIR$/library_youku/library_youku.iml" />
+    </modules>
+  </component>
+</project>
