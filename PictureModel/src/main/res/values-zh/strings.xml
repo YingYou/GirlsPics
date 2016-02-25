@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">简阅</string>
+    <string name="app_name">便玩</string>
     <string name="drawer_open">DrawerOpen</string>
     <string name="drawer_close">DrawerClose</string>
     <string name="menu_capture">扫一扫</string>
