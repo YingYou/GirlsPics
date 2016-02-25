@@ -1,9 +1,10 @@
 package com.bw.myapplication.interactor.impl;
 
-import com.bw.myapplication.SecondFragment;
-import com.bw.myapplication.ThirdFragment;
+
 import com.bw.myapplication.interactor.HomeInteractor;
 import com.bw.myapplication.ui.fragment.HomeFragment;
+import com.bw.myapplication.ui.fragment.MusicsFragment;
+import com.bw.myapplication.ui.fragment.VideosContainerFragment;
 import com.github.obsessive.library.base.BaseLazyFragment;
 
 import java.util.ArrayList;
@@ -18,8 +19,8 @@ public class HomeInteractorImpl implements HomeInteractor {
     public List<BaseLazyFragment> getPagerFragments() {
         List<BaseLazyFragment> fragments = new ArrayList<>();
         fragments.add(new HomeFragment());
-        fragments.add(new SecondFragment());
-        fragments.add(new ThirdFragment());
+        fragments.add(new VideosContainerFragment());
+        fragments.add(new MusicsFragment());
         return fragments;
     }
 

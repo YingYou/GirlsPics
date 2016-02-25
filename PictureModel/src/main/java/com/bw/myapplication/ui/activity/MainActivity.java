@@ -2,18 +2,20 @@ package com.bw.myapplication.ui.activity;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import com.bw.myapplication.ForthFragment;
 import com.bw.myapplication.R;
-import com.bw.myapplication.SecondFragment;
-import com.bw.myapplication.ThirdFragment;
 import com.bw.myapplication.bean.NavigationEntity;
 import com.bw.myapplication.presenter.Presenter;
 import com.bw.myapplication.presenter.impl.HomePresenterImpl;
 import com.bw.myapplication.ui.activity.base.BaseActivity;
 import com.bw.myapplication.ui.fragment.HomeFragment;
+import com.bw.myapplication.ui.fragment.MusicsFragment;
+import com.bw.myapplication.ui.fragment.VideosContainerFragment;
 import com.bw.myapplication.ui.view.HomeView;
 import com.github.obsessive.library.base.BaseLazyFragment;
 import com.github.obsessive.library.eventbus.EventCenter;
@@ -26,11 +28,12 @@ public class MainActivity extends BaseActivity implements HomeView {
     private RadioGroup tab_bottom;
     public static Fragment[] mFragments;
     private HomeFragment firstFragment;
-    private SecondFragment secondFragment;
-    private ThirdFragment thirdFragment;
+    private VideosContainerFragment secondFragment;
+    private MusicsFragment thirdFragment;
     private ForthFragment forthFragment;
 
     private Presenter mHomePresenter = null;
+    private static long DOUBLE_CLICK_TIME = 0L;
 
     @Override
 
@@ -61,10 +64,10 @@ public class MainActivity extends BaseActivity implements HomeView {
         firstFragment = new HomeFragment();
         getSupportFragmentManager().beginTransaction().add(R.id.container, firstFragment, "tag1").commit();
 
-        secondFragment = new SecondFragment();
+        secondFragment = new VideosContainerFragment();
         getSupportFragmentManager().beginTransaction().add(R.id.container, secondFragment, "tag2").commit();
 
-        thirdFragment = new ThirdFragment();
+        thirdFragment = new MusicsFragment();
         getSupportFragmentManager().beginTransaction().add(R.id.container, thirdFragment, "tag3").commit();
 
         forthFragment = new ForthFragment();
@@ -89,13 +92,13 @@ public class MainActivity extends BaseActivity implements HomeView {
 
                         break;
                     case R.id.rbSubject: //专题
-
+                        secondFragment.setUserVisibleHint(true);
                         setFragmentIndicator(1);
 
                         break;
 
                     case R.id.rbRamble: //漫谈
-
+                        thirdFragment.setUserVisibleHint(true);
                         setFragmentIndicator(2);
 
                         break;
@@ -170,5 +173,25 @@ public class MainActivity extends BaseActivity implements HomeView {
 
 
 
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (event.getKeyCode() == KeyEvent.KEYCODE_MENU) {
+
+            return true;
+        } else if (event.getKeyCode() == KeyEvent.KEYCODE_BACK) {
+
+                if ((System.currentTimeMillis() - DOUBLE_CLICK_TIME) > 2000) {
+//                    showToast(getString(R.string.double_click_exit));
+                    Toast.makeText(this,R.string.double_click_exit,Toast.LENGTH_SHORT).show();
+                    DOUBLE_CLICK_TIME = System.currentTimeMillis();
+                } else {
+                    getBaseApplication().exitApp();
+                }
+
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }

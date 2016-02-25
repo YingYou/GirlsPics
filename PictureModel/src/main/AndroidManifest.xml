@@ -36,6 +36,14 @@
             android:name="client_secret"
             android:value="4b493b53b28194f9e23f3eca8cd673c8"/>
 
+        <!-- umeng ID-->
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="55af0b68e0f55a0e9e003fba"/>
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="Obsessive_Simplify_Reader"/>
+
         <activity
             android:name=".ui.activity.MainActivity"
             android:label="@string/app_name"
@@ -53,6 +61,25 @@
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.ImagesDetail"/>
+
+        <activity
+            android:name=".ui.activity.PlayerActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="true"
+            android:launchMode="singleTask"/>
+
+        <service android:name=".player.MusicPlayService"/>
+
+        <!-- About Umeng -->
+        <activity
+            android:name="com.umeng.fb.ConversationActivity"/>
+        <activity
+            android:name="com.umeng.update.UpdateDialogActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+
+        <service
+            android:name="com.umeng.update.net.DownloadingService"
+            android:process=":DownloadingService"/>
     </application>
 
 </manifest>

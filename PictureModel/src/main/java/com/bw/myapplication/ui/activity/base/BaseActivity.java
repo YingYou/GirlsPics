@@ -2,6 +2,7 @@ package com.bw.myapplication.ui.activity.base;
 
 import android.os.Bundle;
 
+import com.bw.myapplication.PictureModeApplication;
 import com.bw.myapplication.R;
 import com.bw.myapplication.ui.view.base.BaseView;
 import com.github.obsessive.library.base.BaseAppCompatActivity;
@@ -31,8 +32,8 @@ public abstract class BaseActivity extends BaseAppCompatActivity implements Base
         mToolbar = ButterKnife.findById(this,R.id.common_toolbar);
         if (null != mToolbar){
             setSupportActionBar(mToolbar);
-            getSupportActionBar().setHomeButtonEnabled(true);
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//            getSupportActionBar().setHomeButtonEnabled(true);
+//            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         }
     }
@@ -79,4 +80,10 @@ public abstract class BaseActivity extends BaseAppCompatActivity implements Base
     }
 
     protected abstract boolean isApplyKitKatTranslucency();
+
+    protected PictureModeApplication getBaseApplication() {
+        return (PictureModeApplication) getApplication();
+    }
 }
+
+

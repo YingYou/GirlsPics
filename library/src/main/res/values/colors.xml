@@ -16,8 +16,8 @@
   -->
 
 <resources>
-    <color name="sr_color_primary">#FF4E3E7F</color>
-    <color name="sr_color_primary_dark">#FF4E3E7F</color>
+    <color name="sr_color_primary">#7fff4d90</color>
+    <color name="sr_color_primary_dark">#ff4d90</color>
     <color name="sr_window_background">#FFFEFEFE</color>
 
     <color name="default_image_background">#FFDEDEDE</color>
